@@ -4,11 +4,13 @@ public class Motor {
 
     private String warna;
     private String merk;
+    private static int jumlahHeapMotor = 0;
 
     public Motor(String warna, String merk) {
         this.warna = warna;
         this.merk = merk;
         System.out.println("Objek Motor dibuat di heap memory.");
+        jumlahHeapMotor++;
     }
 
     public void nyalakan() {
@@ -16,7 +18,13 @@ public class Motor {
     }
 
     @Override
-    protected void finalize() {
+   protected void finalize() throws Throwable {
         System.out.println("Objek Motor dihapus oleh Garbage Collector.");
+        jumlahHeapMotor--;
+        super.finalize();
+    }
+    
+     public static int getJumlahHeapMotor() {
+        return jumlahHeapMotor;
     }
 }
