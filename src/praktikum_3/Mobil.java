@@ -20,8 +20,13 @@ public class Mobil {
     @Override
     protected void finalize() throws Throwable {
         System.out.println("Objek Mobil dihapus oleh Garbage Collector.");
-        jumlahHeapMobil--;
         super.finalize();
+    }
+    
+    public static void decrementMobil() {
+        if (jumlahHeapMobil > 0) {
+            jumlahHeapMobil--;
+        }
     }
 
     public static int getJumlahHeapMobil() {

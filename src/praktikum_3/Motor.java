@@ -18,12 +18,17 @@ public class Motor {
     }
 
     @Override
-   protected void finalize() throws Throwable {
+    protected void finalize() throws Throwable {
         System.out.println("Objek Motor dihapus oleh Garbage Collector.");
-        jumlahHeapMotor--;
         super.finalize();
     }
     
+    public static void decrementMotor() {
+        if (jumlahHeapMotor > 0) {
+            jumlahHeapMotor--;
+        }
+    }
+
      public static int getJumlahHeapMotor() {
         return jumlahHeapMotor;
     }
