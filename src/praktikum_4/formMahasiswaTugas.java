@@ -1,5 +1,7 @@
 package praktikum_4;
 
+import javax.swing.JOptionPane;
+
 public class formMahasiswaTugas extends javax.swing.JFrame {
 
     public formMahasiswaTugas() {
@@ -27,6 +29,7 @@ public class formMahasiswaTugas extends javax.swing.JFrame {
         textAreaAlamat = new javax.swing.JTextArea();
         dosenPembimbingLabel = new javax.swing.JLabel();
         txtDosenPembimbing = new javax.swing.JTextField();
+        btnReset = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -39,7 +42,7 @@ public class formMahasiswaTugas extends javax.swing.JFrame {
 
         jurusanLabel.setText("Jurusan");
 
-        cbJurusan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Informatika", "Sistem Informasi", "Teknologi Informasi", "Ilmu Komunikasi", "Bisnis Digital" }));
+        cbJurusan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih Prodi", "Informatika", "Sistem Informasi", "Teknologi Informasi", "Ilmu Komunikasi", "Bisnis Digital" }));
 
         outputArea.setColumns(20);
         outputArea.setRows(5);
@@ -56,13 +59,20 @@ public class formMahasiswaTugas extends javax.swing.JFrame {
 
         jenisKelaminLabel.setText("Jenis Kelamin");
 
-        cpJenisKelamin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Laki-laki", "Perempuan" }));
+        cpJenisKelamin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih Jenis Kelamin", "Laki-laki", "Perempuan" }));
 
         textAreaAlamat.setColumns(20);
         textAreaAlamat.setRows(5);
         jScrollPane2.setViewportView(textAreaAlamat);
 
         dosenPembimbingLabel.setText("Dosen Pembimbing");
+
+        btnReset.setText("Reset");
+        btnReset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnResetActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -90,11 +100,13 @@ public class formMahasiswaTugas extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(295, 295, 295)
-                        .addComponent(btnTampil, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(248, 248, 248)
-                        .addComponent(titleLabel)))
+                        .addComponent(titleLabel))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(302, 302, 302)
+                        .addComponent(btnTampil, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -130,24 +142,53 @@ public class formMahasiswaTugas extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtDosenPembimbing, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(btnTampil, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(116, Short.MAX_VALUE))
+                .addGap(44, 44, 44)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnTampil, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(128, 128, 128))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnTampilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTampilActionPerformed
+        String namaInput = txtNama.getText().trim();
+        String nimInput = txtNim.getText().trim();
+        String jurusanInput = cbJurusan.getSelectedItem().toString();
+        String jenisKelaminInput = cpJenisKelamin.getSelectedItem().toString();
+        String dosenPembimbingInput = txtDosenPembimbing.getText().trim();
+        String alamatInput = textAreaAlamat.getText().trim();
+
+        if (namaInput.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Nama harus diisi!", "Peringatan", JOptionPane.WARNING_MESSAGE);
+            return;
+        } else if (nimInput.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "NIM harus diisi!", "Peringatan", JOptionPane.WARNING_MESSAGE);
+            return;
+        } else if (jurusanInput.isEmpty() || jurusanInput.equals("Pilih Jurusan")) {
+            JOptionPane.showMessageDialog(this, "Jurusan harus dipilih!", "Peringatan", JOptionPane.WARNING_MESSAGE);
+            return;
+        } else if (jenisKelaminInput.isEmpty() || jenisKelaminInput.equals("Pilih Jenis Kelamin")) {
+            JOptionPane.showMessageDialog(this, "Jenis Kelamin harus dipilih!", "Peringatan", JOptionPane.WARNING_MESSAGE);
+            return;
+        } else if (dosenPembimbingInput.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Dosen Pembimbing harus diisi!", "Peringatan", JOptionPane.WARNING_MESSAGE);
+            return;
+        } else if (alamatInput.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Alamat harus diisi!", "Peringatan", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
         MahasiswaTugas mhs = new MahasiswaTugas();
-        
+
         mhs.setNama(txtNama.getText());
         mhs.setNim(txtNim.getText());
         mhs.setJurusan(cbJurusan.getSelectedItem().toString());
         mhs.setJenisKelamin(cpJenisKelamin.getSelectedItem().toString());
         mhs.setDosenPembimbing(txtDosenPembimbing.getText());
         mhs.setAlamat(textAreaAlamat.getText());
-        
+
         String output = "Data Mahasiswa \n\n"
                 + "Nama : " + mhs.getNama() + "\n"
                 + "NIM : " + mhs.getNim() + "\n"
@@ -157,6 +198,15 @@ public class formMahasiswaTugas extends javax.swing.JFrame {
                 + "Alamat : " + mhs.getAlamat();
         outputArea.setText(output);
     }//GEN-LAST:event_btnTampilActionPerformed
+
+    private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
+        txtNama.setText("");
+        txtNim.setText("");
+        cbJurusan.setSelectedIndex(0);
+        cpJenisKelamin.setSelectedIndex(0);
+        txtDosenPembimbing.setText("");
+        textAreaAlamat.setText("");
+    }//GEN-LAST:event_btnResetActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -168,6 +218,7 @@ public class formMahasiswaTugas extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel alamatLabel;
+    private javax.swing.JButton btnReset;
     private javax.swing.JButton btnTampil;
     private javax.swing.JComboBox<String> cbJurusan;
     private javax.swing.JComboBox<String> cpJenisKelamin;

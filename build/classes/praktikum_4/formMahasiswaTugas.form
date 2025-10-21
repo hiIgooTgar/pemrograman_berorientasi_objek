@@ -48,12 +48,14 @@
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="295" max="-2" attributes="0"/>
-                      <Component id="btnTampil" min="-2" pref="443" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="248" max="-2" attributes="0"/>
                       <Component id="titleLabel" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="302" max="-2" attributes="0"/>
+                      <Component id="btnTampil" min="-2" pref="264" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="btnReset" min="-2" pref="100" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
@@ -98,9 +100,12 @@
                   </Group>
                   <Component id="jScrollPane1" min="-2" pref="223" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="btnTampil" min="-2" pref="42" max="-2" attributes="0"/>
-              <EmptySpace pref="116" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnReset" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
+                  <Component id="btnTampil" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="128" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -136,12 +141,13 @@
     <Component class="javax.swing.JComboBox" name="cbJurusan">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="5">
-            <StringItem index="0" value="Informatika"/>
-            <StringItem index="1" value="Sistem Informasi"/>
-            <StringItem index="2" value="Teknologi Informasi"/>
-            <StringItem index="3" value="Ilmu Komunikasi"/>
-            <StringItem index="4" value="Bisnis Digital"/>
+          <StringArray count="6">
+            <StringItem index="0" value="Pilih Prodi"/>
+            <StringItem index="1" value="Informatika"/>
+            <StringItem index="2" value="Sistem Informasi"/>
+            <StringItem index="3" value="Teknologi Informasi"/>
+            <StringItem index="4" value="Ilmu Komunikasi"/>
+            <StringItem index="5" value="Bisnis Digital"/>
           </StringArray>
         </Property>
       </Properties>
@@ -185,9 +191,10 @@
     <Component class="javax.swing.JComboBox" name="cpJenisKelamin">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="2">
-            <StringItem index="0" value="Laki-laki"/>
-            <StringItem index="1" value="Perempuan"/>
+          <StringArray count="3">
+            <StringItem index="0" value="Pilih Jenis Kelamin"/>
+            <StringItem index="1" value="Laki-laki"/>
+            <StringItem index="2" value="Perempuan"/>
           </StringArray>
         </Property>
       </Properties>
@@ -216,6 +223,14 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtDosenPembimbing">
+    </Component>
+    <Component class="javax.swing.JButton" name="btnReset">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Reset"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnResetActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
