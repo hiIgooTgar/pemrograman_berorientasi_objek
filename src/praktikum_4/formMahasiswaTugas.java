@@ -1,7 +1,5 @@
 package praktikum_4;
-
 import javax.swing.JOptionPane;
-
 public class formMahasiswaTugas extends javax.swing.JFrame {
 
     public formMahasiswaTugas() {
@@ -197,6 +195,13 @@ public class formMahasiswaTugas extends javax.swing.JFrame {
                 + "Dosen Pembimbing : " + mhs.getDosenPembimbing() + "\n"
                 + "Alamat : " + mhs.getAlamat();
         outputArea.setText(output);
+        
+        txtNama.setText("");
+        txtNim.setText("");
+        cbJurusan.setSelectedIndex(0);
+        cpJenisKelamin.setSelectedIndex(0);
+        txtDosenPembimbing.setText("");
+        textAreaAlamat.setText("");
     }//GEN-LAST:event_btnTampilActionPerformed
 
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed

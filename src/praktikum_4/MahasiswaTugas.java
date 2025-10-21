@@ -1,5 +1,4 @@
 package praktikum_4;
-
 public class MahasiswaTugas {
 
     private String nama;

@@ -1,7 +1,6 @@
 package praktikum_4;
-
 public class formMahasiswa extends javax.swing.JFrame {
-
+    
     public formMahasiswa() {
         initComponents();
     }
@@ -96,11 +95,9 @@ public class formMahasiswa extends javax.swing.JFrame {
 
     private void btnTampilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTampilActionPerformed
         Mahasiswa mhs = new Mahasiswa();
-        
         mhs.setNama(txtNama.getText());
         mhs.setNim(txtNim.getText());
         mhs.setJurusan(cbJurusan.getSelectedItem().toString());
-        
         String output = "Data Mahasiswa \n\n"
                 + "Nama       : " + mhs.getNama() + "\n"
                 + "NIM           : " + mhs.getNim() + "\n"
@@ -115,7 +112,6 @@ public class formMahasiswa extends javax.swing.JFrame {
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnTampil;
     private javax.swing.JComboBox<String> cbJurusan;

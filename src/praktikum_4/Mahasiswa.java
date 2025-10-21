@@ -1,7 +1,5 @@
 package praktikum_4;
-
 public class Mahasiswa {
-
     private String nama;
     private String nim;
     private String jurusan;
