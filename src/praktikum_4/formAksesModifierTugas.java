@@ -139,7 +139,7 @@ public class formAksesModifierTugas extends javax.swing.JFrame {
             double gajiBaru = Double.parseDouble(inputGaji);
 
             if (gajiBaru <= 0) {
-                labelValidasi.setText("❌ ERROR: Gaji harus lebih besar dari nol!");
+                labelValidasi.setText("Gaji harus lebih besar dari nol!");
                 labelValidasi.setForeground(Color.RED);
                 JOptionPane.showMessageDialog(this,
                         "Gaji (" + inputGaji + ") tidak valid. Gaji harus positif!",
