@@ -16,10 +16,11 @@ public class Mobil extends Kendaraan{
         return biaya;
     }
     
+    @Override
     public String tampilInfo() {
-        return super.tampiInfo() +
-                "\nJenis Mobil" +
-                "\nKapasitas :" + kapasitas + "orang" +
+        return super.tampilInfo() +
+                "\nJenis kendaraan : Mobil" +
+                "\nKapasitas : " + kapasitas + " orang" +
                 "\nSopir : " + (sopir ? "Ya" : "Tidak");
     }
 }

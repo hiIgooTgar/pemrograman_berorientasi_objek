@@ -15,8 +15,8 @@ public class Motor extends Kendaraan {
     }
     
     public String tampilInfo() {
-        return super.tampiInfo() +
-                "\nJensi : Motor" +
+        return super.tampilInfo() +
+                "\nJenis kendaraan : Motor" +
                 "\nTipe : " + tipe;
     }
 }

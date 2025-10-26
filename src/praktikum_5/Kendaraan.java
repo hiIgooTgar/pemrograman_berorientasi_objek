@@ -12,8 +12,8 @@ public class Kendaraan {
         this.hargaSewaPerHari = hargaSewaPerHari;
     }
 
-    public String tampiInfo() {
-        return "Merk : " + merk + "\nPlat Nomor : " + plat + "\nHarga Sewa/Hari: Rp " + hargaSewaPerHari;
+    public String tampilInfo() {
+        return "Merk Kendaraan : " + merk + "\nPlat Nomor : " + plat + "\nHarga Sewa/Hari: Rp " + hargaSewaPerHari;
     }
 
     public double hitungBiaya(int lamaSewa) {
