@@ -1,11 +1,8 @@
 package praktikum_5;
-
 import javax.swing.JOptionPane;
-
 public class formRental extends javax.swing.JFrame {
 
-    private static final java.util.logging.Logger Logger
-            = java.util.logging.Logger.getLogger(formRental.class.getName());
+    private static final java.util.logging.Logger Logger = java.util.logging.Logger.getLogger(formRental.class.getName());
 
     public formRental() {
         initComponents();
@@ -36,7 +33,7 @@ public class formRental extends javax.swing.JFrame {
         txtHarga = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         txtDiskon = new javax.swing.JTextField();
-        cbJenis = new javax.swing.JComboBox<>();
+        cbJenis = new javax.swing.JComboBox<String>();
         labelMobil = new javax.swing.JLabel();
         txtKapasitas = new javax.swing.JTextField();
         labelMotor = new javax.swing.JLabel();
@@ -68,7 +65,7 @@ public class formRental extends javax.swing.JFrame {
 
         jLabel8.setText("Diskon");
 
-        cbJenis.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih Jenis Kendaraan", "Mobil", "Motor" }));
+        cbJenis.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Pilih Jenis Kendaraan", "Mobil", "Motor" }));
         cbJenis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbJenisActionPerformed(evt);
@@ -140,18 +137,18 @@ public class formRental extends javax.swing.JFrame {
                                         .addComponent(txtDiskon, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(labelMotor)
                                         .addComponent(txtTipe, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addComponent(chkSopir, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 727, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(chkSopir, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 727, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(114, 114, 114)
+                                .addComponent(btnHitung, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(395, 395, 395)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(231, 231, 231)
-                        .addComponent(btnHitung, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel1)))
                 .addContainerGap(124, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -205,14 +202,14 @@ public class formRental extends javax.swing.JFrame {
                         .addComponent(txtKapasitas, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(chkSopir)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnReset, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnHitung, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         pack();
@@ -277,7 +274,6 @@ public class formRental extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Kapasitas mobil harus diisi!", "Peringatan", JOptionPane.WARNING_MESSAGE);
                 return;
             }
-
         } else if (jenisInput.equalsIgnoreCase("Motor")) {
             if (tipeInput.isEmpty()) {
                 JOptionPane.showMessageDialog(this, "Tipe motor harus diisi!", "Peringatan", JOptionPane.WARNING_MESSAGE);
@@ -299,12 +295,12 @@ public class formRental extends javax.swing.JFrame {
             boolean sopir = chkSopir.isSelected();
             Mobil car = new Mobil(merk, plat, harga, kapasitas, sopir);
             total = (diskon > 0) ? car.hitungBiaya(lama, diskon) : car.hitungBiaya(lama);
-            txtOutput.setText("Nama Penyewa : " + nama + "\n" + car.tampilInfo() + "\nTotal Biaya : Rp " + total);
+            txtOutput.setText("Nama Penyewa : " + nama + "\n" + car.tampilInfo() + "\nTotal Biaya : Rp " + String.format("%.0f", total));
         } else {
             String tipe = txtTipe.getText();
             Motor motor = new Motor(merk, plat, harga, tipe);
             total = (diskon > 0) ? motor.hitungBiaya(lama, diskon) : motor.hitungBiaya(lama);
-            txtOutput.setText("Nama Penyewa : " + nama + "\n" + motor.tampilInfo() + "\nTotal Biaya : Rp " + total);
+            txtOutput.setText("Nama Penyewa : " + nama + "\n" + motor.tampilInfo() + "\nTotal Biaya : Rp " + String.format("%.0f", total));
         }
     }//GEN-LAST:event_btnHitungActionPerformed
 

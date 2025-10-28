@@ -13,7 +13,7 @@ public class Kendaraan {
     }
 
     public String tampilInfo() {
-        return "Merk Kendaraan : " + merk + "\nPlat Nomor : " + plat + "\nHarga Sewa/Hari: Rp " + hargaSewaPerHari;
+        return "Merk Kendaraan : " + merk + "\nPlat Nomor : " + plat + "\nHarga Sewa/Hari: Rp " + String.format("%.0f", hargaSewaPerHari);
     }
 
     public double hitungBiaya(int lamaSewa) {
