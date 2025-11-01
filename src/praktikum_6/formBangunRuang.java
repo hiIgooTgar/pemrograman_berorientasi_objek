@@ -228,7 +228,7 @@ public class formBangunRuang extends javax.swing.JFrame {
             double sisi = Double.parseDouble(sisiInput);
             bangun = new Kubus(sisi);
             volume = bangun.hitungVolume(sisi);
-            hasil = "=== Volume Kubus ===\n" 
+            hasil = "==== Volume Kubus ====\n" 
              + "Sisi : " + String.format("%.0f", sisi) 
              + "\nHasil Volume : " + String.format("%.0f", volume);
 
@@ -243,7 +243,7 @@ public class formBangunRuang extends javax.swing.JFrame {
 
             bangun = new Balok(p, l, t);
             volume = bangun.hitungVolume(p, l, t);
-            hasil = "=== Volume Balok ===\n" 
+            hasil = "==== Volume Balok ====\n" 
              + "Panjang : " + String.format("%.0f", p) 
              + "\nLebar : " + String.format("%.0f", l)
              + "\nTinggi : " + String.format("%.0f", t)
