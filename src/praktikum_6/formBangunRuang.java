@@ -1,13 +1,12 @@
 package praktikum_6;
-
 import javax.swing.JOptionPane;
 
 public class formBangunRuang extends javax.swing.JFrame {
-
     private static final java.util.logging.Logger Logger = java.util.logging.Logger.getLogger(formBangunRuang.class.getName());
 
     public formBangunRuang() {
         initComponents();
+        outputArea.setEditable(false);
         setLocationRelativeTo(null);
         titleKubus.setVisible(false);
         titleSisi.setVisible(false);
@@ -50,7 +49,7 @@ public class formBangunRuang extends javax.swing.JFrame {
 
         jLabel2.setText("Bangun Ruang");
 
-        cbJenisBangunRuang.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih Bangun Ruang", "Kubus", "Balok", " " }));
+        cbJenisBangunRuang.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih Bangun Ruang", "Kubus", "Balok" }));
         cbJenisBangunRuang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbJenisBangunRuangActionPerformed(evt);
