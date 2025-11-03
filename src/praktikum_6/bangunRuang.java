@@ -2,7 +2,7 @@ package praktikum_6;
 
 public class bangunRuang {
     public double hitungVolume() {
-        System.out.println("Menghitung Volume Bangun Ruang Umum...");
+        System.out.println("Menghitung Volume Bangun Ruang");
         return 0; 
     }
     

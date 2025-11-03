@@ -12,12 +12,6 @@ public class Balok extends bangunRuang{
     }
 
     @Override
-    public double hitungVolume(double panjang, double lebar, double tinggi) {
-        double volume = panjang * lebar * tinggi;
-        return volume;
-    }
-
-    @Override
     public double hitungVolume() {
         return panjang * lebar * tinggi;
     }

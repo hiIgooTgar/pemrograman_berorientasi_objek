@@ -1,11 +1,11 @@
 package praktikum_6;
 import javax.swing.JOptionPane;
-
 public class formBangunRuang extends javax.swing.JFrame {
     private static final java.util.logging.Logger Logger = java.util.logging.Logger.getLogger(formBangunRuang.class.getName());
 
     public formBangunRuang() {
         initComponents();
+        getContentPane().setBackground(new java.awt.Color(220, 240, 255));
         outputArea.setEditable(false);
         setLocationRelativeTo(null);
         titleKubus.setVisible(false);
@@ -157,7 +157,7 @@ public class formBangunRuang extends javax.swing.JFrame {
                     .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(226, Short.MAX_VALUE))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
 
         pack();
@@ -199,7 +199,6 @@ public class formBangunRuang extends javax.swing.JFrame {
             inputLebarBalok.setVisible(false);
             inputTinggiBalok.setVisible(false);
         }
-
     }//GEN-LAST:event_cbJenisBangunRuangActionPerformed
 
     private void btnHitungVolumeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHitungVolumeActionPerformed
@@ -223,14 +222,12 @@ public class formBangunRuang extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Input sisi kubus harus diisi!", "Peringatan", JOptionPane.WARNING_MESSAGE);
                 return;
             }
-
             double sisi = Double.parseDouble(sisiInput);
             bangun = new Kubus(sisi);
             volume = bangun.hitungVolume(sisi);
             hasil = "==== Volume Kubus ====\n" 
              + "Sisi : " + String.format("%.0f", sisi) 
              + "\nHasil Volume : " + String.format("%.0f", volume);
-
         } else if (jenisInput.equalsIgnoreCase("Balok")) {
             if (panjangInput.isEmpty() || lebarInput.isEmpty() || tinggiInput.isEmpty()) {
                 JOptionPane.showMessageDialog(this, "Semua dimensi Balok (Panjang, Lebar, Tinggi) harus diisi!", "Peringatan", JOptionPane.WARNING_MESSAGE);
@@ -239,7 +236,6 @@ public class formBangunRuang extends javax.swing.JFrame {
             double p = Double.parseDouble(panjangInput);
             double l = Double.parseDouble(lebarInput);
             double t = Double.parseDouble(tinggiInput);
-
             bangun = new Balok(p, l, t);
             volume = bangun.hitungVolume(p, l, t);
             hasil = "==== Volume Balok ====\n" 
@@ -262,6 +258,7 @@ public class formBangunRuang extends javax.swing.JFrame {
         inputPanjangBalok.setText("");
         inputLebarBalok.setText("");
         inputTinggiBalok.setText("");
+        outputArea.setText(""); 
     }//GEN-LAST:event_btnResetActionPerformed
 
     public static void main(String args[]) {
