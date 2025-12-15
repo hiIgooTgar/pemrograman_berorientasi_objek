@@ -121,6 +121,7 @@ public class dataObat extends javax.swing.JFrame {
         tableDataObat = new javax.swing.JTable();
         jLabel10 = new javax.swing.JLabel();
         inputSearching = new javax.swing.JTextField();
+        backDashboard = new javax.swing.JButton();
 
         jLabel2.setText("jLabel2");
 
@@ -210,6 +211,15 @@ public class dataObat extends javax.swing.JFrame {
             }
         });
 
+        backDashboard.setBackground(new java.awt.Color(0, 153, 255));
+        backDashboard.setForeground(new java.awt.Color(255, 255, 255));
+        backDashboard.setText("Kemabli ke Dashboard");
+        backDashboard.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backDashboardActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -241,10 +251,12 @@ public class dataObat extends javax.swing.JFrame {
                             .addComponent(jLabel8)
                             .addComponent(inputHargaJual, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(inputStok, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(inputStok, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(backDashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(522, 522, 522)
+                                .addGap(396, 396, 396)
                                 .addComponent(jLabel10)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(inputSearching, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -307,7 +319,8 @@ public class dataObat extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(inputSearching, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputSearching, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(backDashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(37, 37, 37)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(48, 48, 48))
@@ -431,6 +444,12 @@ public class dataObat extends javax.swing.JFrame {
         searchData(inputSearching.getText());
     }//GEN-LAST:event_inputSearchingKeyReleased
 
+    private void backDashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backDashboardActionPerformed
+        dashboard home = new dashboard();
+        home.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_backDashboardActionPerformed
+
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -440,6 +459,7 @@ public class dataObat extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton backDashboard;
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnClear;
     private javax.swing.JButton btnDelete;

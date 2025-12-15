@@ -62,10 +62,13 @@
                       </Group>
                   </Group>
                   <Group type="102" attributes="0">
-                      <Component id="inputStok" min="-2" pref="119" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="inputStok" min="-2" pref="119" max="-2" attributes="0"/>
+                          <Component id="backDashboard" min="-2" pref="245" max="-2" attributes="0"/>
+                      </Group>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="522" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="396" max="-2" attributes="0"/>
                               <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="inputSearching" min="-2" pref="298" max="-2" attributes="0"/>
@@ -149,6 +152,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="inputSearching" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                  <Component id="backDashboard" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="347" max="-2" attributes="0"/>
@@ -368,6 +372,20 @@
     <Component class="javax.swing.JTextField" name="inputSearching">
       <Events>
         <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="inputSearchingKeyReleased"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="backDashboard">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="99" red="0" type="rgb"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Kemabli ke Dashboard"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backDashboardActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

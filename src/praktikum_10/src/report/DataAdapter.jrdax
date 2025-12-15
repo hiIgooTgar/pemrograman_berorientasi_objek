@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<jdbcDataAdapter class="net.sf.jasperreports.data.jdbc.JdbcDataAdapterImpl">
+  <name>Data Obat</name>
+  <classpath>C:\Users\USER\Downloads\mysql-connector-j-9.5.0.jar</classpath>
+  <classpath>C:\Users\USER\Downloads\library dan software jaspersoft\library dan software jaspersoft\itext-4.2.1.jar</classpath>
+  <classpath>C:\Users\USER\Downloads\library dan software jaspersoft\library dan software jaspersoft\jasperreports-6.20.6.jar</classpath>
+  <driver>com.mysql.jdbc.Driver</driver>
+  <username>root</username>
+  <password></password>
+  <url>jdbc:mysql://localhost/igo_apotek_24sa11a159</url>
+  <database></database>
+  <savePassword>true</savePassword>
+  <serverAddress></serverAddress>
+</jdbcDataAdapter>

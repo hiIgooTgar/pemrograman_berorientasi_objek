@@ -109,7 +109,7 @@ from obat]]>
 					<textFieldExpression><![CDATA[$F{harga_jual}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="630" y="1" width="80" height="32" forecolor="#006699" uuid="cfa1a3a0-8e27-4df4-9220-ea6998a0522d"/>
+					<reportElement x="630" y="1" width="60" height="32" forecolor="#006699" uuid="cfa1a3a0-8e27-4df4-9220-ea6998a0522d"/>
 					<textElement verticalAlignment="Middle">
 						<font size="14" isBold="false"/>
 					</textElement>
@@ -248,7 +248,7 @@ from obat]]>
 				<text><![CDATA[Harga Jual]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="630" y="1" width="80" height="32" forecolor="#666666" backcolor="#E6E6E6" uuid="1b75ef47-185c-4b08-aee6-ecdca4bf7549"/>
+				<reportElement mode="Opaque" x="630" y="1" width="60" height="32" forecolor="#666666" backcolor="#E6E6E6" uuid="1b75ef47-185c-4b08-aee6-ecdca4bf7549"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font size="15" isBold="true"/>
 				</textElement>
@@ -262,16 +262,15 @@ from obat]]>
 	<pageFooter>
 		<band height="30">
 			<textField>
-				<reportElement mode="Opaque" x="0" y="4" width="710" height="26" backcolor="#E6E6E6" uuid="165cc319-10d2-40a1-888f-6e3f69e9245c"/>
-				<textElement textAlignment="Right"/>
-				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
-			</textField>
-			<textField evaluationTime="Report">
-				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="ca69f93b-0518-4dbd-a426-d4d240478b9b"/>
-				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				<reportElement mode="Opaque" x="0" y="4" width="690" height="26" backcolor="#E6E6E6" uuid="165cc319-10d2-40a1-888f-6e3f69e9245c">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<box rightPadding="10"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of " + $V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>
 			<textField pattern="EEEEE dd MMMMM yyyy">
-				<reportElement x="0" y="4" width="100" height="13" uuid="27485add-c8b0-4e34-a79f-2774764443f7"/>
+				<reportElement x="10" y="11" width="100" height="13" uuid="27485add-c8b0-4e34-a79f-2774764443f7"/>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 			<line>
